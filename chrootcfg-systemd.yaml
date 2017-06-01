@@ -5,7 +5,7 @@
  
    subgroups:
  
-       - name: "base"                                     # 'base' package group from arch linux, except for last 3 packages
+       - name: "Base"                                     # 'base' package group from arch linux, except for last 3 packages
          description: "Manjaro command line interface"
          hidden: false
          selected: true
@@ -72,7 +72,7 @@
          packages:
               - linux49                                   # currently only kernel verion from manjaro-tools.conf is supported! --> do not give user a choice!
  
-       - name: "boot"
+       - name: "Boot"
          description: "GRUB boot loader"
          hidden: false
          selected: true
@@ -84,7 +84,7 @@
               - efibootmgr
               - intel-ucode
  
-       - name: "system"
+       - name: "System"
          description: "Basic Manjaro system"
          hidden: false
          selected: true
@@ -97,7 +97,7 @@
               - manjaro-release
               - manjaro-hotfixes
  
-       - name: "network"
+       - name: "Network"
          description: "Minimal network functionality"
          hidden: false
          selected: true
@@ -105,7 +105,7 @@
          packages:
               - networkmanager
  
-       - name: "network-extra"
+       - name: "Network extra"
          description: "Packages, which extend the network functionality"
          hidden: false
          selected: false
@@ -129,7 +129,7 @@
               - nss-mdns
               - tcp-wrappers 
  
-       - name: "base-devel"
+       - name: "Base-devel"
          description: "AUR support with Yaourt"
          hidden: false
          selected: true
@@ -150,7 +150,7 @@
               - pkg-config
               - yaourt
  
-       - name: "firmware"
+       - name: "Firmware"
          description: "Additional firmware support"
          hidden: false
          selected: false
@@ -164,7 +164,7 @@
               - zd1211-firmware
               - manjaro-firmware
  
-       - name: 'filesystems'
+       - name: 'Filesystems'
          description: 'Extra filesystems'
          hidden: false
          selected: false
@@ -180,7 +180,7 @@
               - nilfs-utils
               - dmraid
  
-       - name: "utilities"
+       - name: "Utilities"
          description: "CLI utilities"
          hidden: false
          selected: false
@@ -196,16 +196,17 @@
               - dmidecode
               - inxi
               - ncdu
+              - manjaro-architect
  
  
- - name: "desktop"
+ - name: "Desktop"
    description: "Plasma desktop"
    hidden: false
    critical: true
  
    subgroups:
  
-       - name: "xorg"
+       - name: "Xorg"
          description: "Xorg display server"
          selected: true
          hidden: false
@@ -219,7 +220,7 @@
                - mesa-demos
                - lib32-mesa-demos
  
-       - name: "displaymanager"
+       - name: "Displaymanager"
          description: "Display manager"
          selected: true
          hidden: false
@@ -302,7 +303,6 @@
               - mediainfo
               - libdvdcss
               - vorbis-tools
-              - inxi
               - chromium
  
        - name: 'Package Manager'
@@ -333,7 +333,7 @@
               - manjaro-alsa
               - ffmpegthumbs
         
-       - name: 'manjaro-settings-manager'
+       - name: 'Manjaro Settings Manager'
          description: 'Offers easy driver, kernel, and language settings'
          selected: false
          hidden: false
@@ -342,8 +342,8 @@
               - manjaro-settings-manager
               - manjaro-settings-manager-notifier
               - manjaro-settings-manager-kcm
- 
-       - name: 'fonts-extra'
+
+       - name: 'Fonts extra'
          description: 'Extra fonts'
          selected: false
          hidden: false
@@ -352,7 +352,7 @@
               - noto-fonts
  
  
- - name: "programs"
+ - name: "Programs"
    description: "Common programs"
    hidden: false
    critical: true
@@ -373,7 +373,7 @@
          hidden: false
          critical: true
          packages:
-             - manjaro-documentation
+             - manjaro-documentation-en
  
        - name: 'manjaro-printer'
          description: 'Printing and printer configuration'
@@ -383,3 +383,26 @@
          packages:
               - manjaro-printer
               - bluez-cups
+              
+        - name: 'Manjaro Strit'
+          description: 'Manjaro Strit specific packages not in Manjaro repositories'
+          selected: true
+          hidden: false
+          critical: true
+          packages:
+               - manjaro-strit-keyring
+               - wallpaper-strit
+               
+        - name: 'Security'
+          description: 'Security and backup oriented software'
+          selected: false
+          hidden: false
+          critical: false
+          packages:
+               - timeshift
+               - deja-dup
+               - gufw
+               - clamtk
+               - clonezilla
+               - kleopatra
+               - wireshark-qt
