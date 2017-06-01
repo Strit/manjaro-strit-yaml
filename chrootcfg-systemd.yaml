@@ -1,0 +1,385 @@
+- name: "manjaro"
+   description: "Base system"
+   hidden: false
+   critical: true
+ 
+   subgroups:
+ 
+       - name: "base"                                     # 'base' package group from arch linux, except for last 3 packages
+         description: "Manjaro command line interface"
+         hidden: false
+         selected: true
+         critical: true
+         packages:
+              - bash
+              - bzip2
+              - coreutils
+              - cryptsetup
+              - device-mapper
+              - dhcpcd
+              - diffutils
+              - e2fsprogs
+              - file
+              - filesystem
+              - findutils
+              - gawk
+              - gcc-libs
+              - gettext
+              - glibc
+              - grep
+              - gzip
+              - inetutils
+              - iproute2
+              - iputils
+              - jfsutils
+              - less
+              - licenses
+              - logrotate
+              - lvm2
+              - man-db
+              - man-pages
+              - mdadm
+              - nano
+              - netctl
+              - pacman
+              - pciutils
+              - pcmciautils
+              - perl
+              - procps-ng
+              - psmisc
+              - reiserfsprogs
+              - s-nail
+              - sed
+              - shadow
+              - sysfsutils
+              - systemd-sysvcompat
+              - tar
+              - texinfo
+              - usbutils
+              - util-linux
+              - vi
+              - which
+              - xfsprogs
+              - manjaro-system                            # manjaro-specific							
+              - mhwd                                      # manjaro-specific
+              - sudo                                      # essential package from 'base-devel' group
+ 
+       - name: "kernel"
+         description: "Kernel"
+         hidden: true
+         selected: true
+         critical: true
+         packages:
+              - linux49                                   # currently only kernel verion from manjaro-tools.conf is supported! --> do not give user a choice!
+ 
+       - name: "boot"
+         description: "GRUB boot loader"
+         hidden: false
+         selected: true
+         critical: true
+         packages:                                        # these packages are also managed by calamares --> user can break installation!
+              - grub
+              - os-prober
+              - memtest86+
+              - efibootmgr
+              - intel-ucode
+ 
+       - name: "system"
+         description: "Basic Manjaro system"
+         hidden: false
+         selected: true
+         critical: true
+         packages:
+              - acpid
+              - cronie
+              - tlp
+              - cpupower
+              - manjaro-release
+              - manjaro-hotfixes
+ 
+       - name: "network"
+         description: "Minimal network functionality"
+         hidden: false
+         selected: true
+         critical: true
+         packages:
+              - networkmanager
+ 
+       - name: "network-extra"
+         description: "Packages, which extend the network functionality"
+         hidden: false
+         selected: false
+         critical: true
+         packages:
+              - rp-pppoe
+              - networkmanager-openconnect
+              - networkmanager-openvpn
+              - networkmanager-pptp
+              - networkmanager-vpnc
+              - avahi
+              - ntp
+              - rsync
+              - bluez
+              - dhclient
+              - openresolv
+              - dnsmasq
+              - openssh
+              - mobile-broadband-provider-info
+              - modemmanager
+              - nss-mdns
+              - tcp-wrappers 
+ 
+       - name: "base-devel"
+         description: "AUR support with Yaourt"
+         hidden: false
+         selected: true
+         critical: true
+         packages:                                        # 'base-devel' packages from arch linux (minus duplicate packages) and yaourt
+              - autoconf
+              - automake
+              - binutils
+              - bison
+              - fakeroot
+              - flex
+              - gcc
+              - groff
+              - libtool
+              - m4
+              - make
+              - patch
+              - pkg-config
+              - yaourt
+ 
+       - name: "firmware"
+         description: "Additional firmware support"
+         hidden: false
+         selected: false
+         critical: true
+         packages:
+              - bluez-firmware
+              - alsa-firmware
+              - b43-fwcutter
+              - ipw2100-fw
+              - ipw2200-fw
+              - zd1211-firmware
+              - manjaro-firmware
+ 
+       - name: 'filesystems'
+         description: 'Extra filesystems'
+         hidden: false
+         selected: false
+         critical: true
+         packages:
+              - btrfs-progs
+              - dosfstools                                # FAT16 and FAT32
+              - ecryptfs-utils
+              - exfat-utils
+              - f2fs-tools
+              - nfs-utils
+              - ntfs-3g
+              - nilfs-utils
+              - dmraid
+ 
+       - name: "utilities"
+         description: "CLI utilities"
+         hidden: false
+         selected: false
+         critical: true
+         packages:                                        # user can break installation, if calamares tries to set zsh as default shell but zsh is not installed.
+              - manjaro-tools-base                        # manjaro-chroot
+              - zsh
+              - acpi
+              - haveged
+              - alsa-utils
+              - crda
+              - powertop
+              - dmidecode
+              - inxi
+              - ncdu
+ 
+ 
+ - name: "desktop"
+   description: "Plasma desktop"
+   hidden: false
+   critical: true
+ 
+   subgroups:
+ 
+       - name: "xorg"
+         description: "Xorg display server"
+         selected: true
+         hidden: false
+         critical: true
+         packages:
+               - xorg-server
+               - xorg-xdpyinfo
+               - xorg-xrandr
+               - xorg-xinit
+               - mesa
+               - mesa-demos
+               - lib32-mesa-demos
+ 
+       - name: "displaymanager"
+         description: "Display manager"
+         selected: true
+         hidden: false
+         critical: true
+         packages:
+               - sddm
+               - sddm-kcm
+ 
+       - name: "Themes"
+         description: "Themes for plasma"
+         selected: true
+         hidden: false
+         critical: true
+         packages:
+               - breath-icon-theme
+               - sddm-ghost-theme
+               - plasma5-themes-ghost
+               - breeze-gtk
+               - gtk-themes-ghost
+ 
+       - name: 'Plasma Applications'
+         description: 'Some Plasma applications'
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+              - ark
+              - dolphin
+              - dolphin-plugins
+              - konsole
+              - kate
+              - kdeconnect
+              - spectacle
+              - partitionmanager
+              - filelight
+              - okular
+              - gwenview
+              - kwave
+              - kid3
+ 
+       - name: 'Plasma Basic'
+         description: 'Basic components for plasma desktop'
+         selected: true
+         hidden: false
+         critical: true
+         packages:
+              - bluedevil
+              - breeze
+              - drkonqi
+              - kde-gtk-config
+              - khelpcenter
+              - kinfocenter
+              - kscreen
+              - kscreenlocker
+              - ksysguard
+              - kwallet-pam
+              - kwayland-integration
+              - kwin
+              - kwrited
+              - milou
+              - plasma-desktop
+              - plsma-nm
+              - plasma-pa
+              - plasma-workspace
+              - powerdevil
+              - systemsettings
+              - user-manager
+              - ksystemlog
+              - systemd-kcm
+              - kaccounts-providers
+ 
+       - name: 'Extra packages'
+         description: 'Packages which enhance usability of the system'
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+              - sshfs
+              - git
+              - mediainfo
+              - libdvdcss
+              - vorbis-tools
+              - inxi
+              - chromium
+ 
+       - name: 'Package Manager'
+         description: 'Packages for packagemanagers'
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+              - octopi
+              - octopi-cachecleaner
+              - octopi-pacmanhelper
+              - octopi-repoeditor
+              - pacmanlogviewer
+              - pamac
+              - pamac-tray-appindicator
+ 
+       - name: 'Audio and video'
+         description: 'Audio and video specific packages'
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+              - pulseaudio
+              - pulseaudio-bluetooth
+              - pulseaudio-equalizer
+              - pulseaudio-jack
+              - pavucontrol-qt
+              - manjaro-alsa
+              - ffmpegthumbs
+        
+       - name: 'manjaro-settings-manager'
+         description: 'Offers easy driver, kernel, and language settings'
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+              - manjaro-settings-manager
+              - manjaro-settings-manager-notifier
+              - manjaro-settings-manager-kcm
+ 
+       - name: 'fonts-extra'
+         description: 'Extra fonts'
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+              - noto-fonts
+ 
+ 
+ - name: "programs"
+   description: "Common programs"
+   hidden: false
+   critical: true
+ 
+   subgroups:
+ 
+       - name: "manjaro-hello"
+         description: "Manjaro welcome screen for new Manjaro users"
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+             - manjaro-hello
+ 
+       - name: "manjaro-documentation"
+         description: "Manjaro user guide"
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+             - manjaro-documentation
+ 
+       - name: 'manjaro-printer'
+         description: 'Printing and printer configuration'
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+              - manjaro-printer
+              - bluez-cups
