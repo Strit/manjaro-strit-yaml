@@ -5,7 +5,7 @@
  
    subgroups:
  
-       - name: "Base"                                     # 'base' package group from arch linux, except for last 3 packages
+       - name: "Base"
          description: "Manjaro command line interface"
          hidden: false
          selected: true
@@ -384,25 +384,35 @@
               - manjaro-printer
               - bluez-cups
               
-        - name: 'Manjaro Strit'
-          description: 'Manjaro Strit specific packages not in Manjaro repositories'
-          selected: true
-          hidden: false
-          critical: true
-          packages:
-               - manjaro-strit-keyring
-               - wallpaper-strit
+       - name: 'Office suite'
+         description: 'A selction of Office software'
+         selected: false
+         hidden: false
+         critical: false
+         packages:
+              - calligra
+              - libreoffice-fresh
+              - libreoffice-still
+              
+       - name: 'Manjaro Strit'
+         description: 'Manjaro Strit specific packages not in Manjaro repositories'
+         selected: true
+         hidden: false
+         critical: true
+         packages:
+              - manjaro-strit-keyring
+              - wallpaper-strit
                
-        - name: 'Security'
-          description: 'Security and backup oriented software'
-          selected: false
-          hidden: false
-          critical: false
-          packages:
-               - timeshift
-               - deja-dup
-               - gufw
-               - clamtk
-               - clonezilla
-               - kleopatra
-               - wireshark-qt
+       - name: 'Security'
+         description: 'Security and backup oriented software'
+         selected: false
+         hidden: false
+         critical: false
+         packages:
+              - timeshift
+              - deja-dup
+              - gufw
+              - clamtk
+              - clonezilla
+              - kleopatra
+              - wireshark-qt
