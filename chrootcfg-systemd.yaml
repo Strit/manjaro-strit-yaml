@@ -297,7 +297,7 @@
          selected: false
          hidden: false
          critical: true
-         packages:
+         packages: 
               - sshfs
               - git
               - mediainfo
@@ -310,7 +310,7 @@
          selected: false
          hidden: false
          critical: true
-         packages:
+         packages: 
               - octopi
               - octopi-cachecleaner
               - octopi-pacmanhelper
