@@ -1,9 +1,9 @@
 - name: "manjaro"
-   description: "Base system"
-   hidden: false
-   critical: true
+  description: "base system"
+  hidden: false
+  critical: true
  
-   subgroups:
+  subgroups:
  
        - name: "Base"
          description: "Manjaro command line interface"
@@ -199,12 +199,12 @@
               - manjaro-architect
  
  
- - name: "Desktop"
-   description: "Plasma desktop"
-   hidden: false
-   critical: true
+- name: "Desktop"
+  description: "Plasma desktop"
+  hidden: false
+  critical: true
  
-   subgroups:
+  subgroups:
  
        - name: "Xorg"
          description: "Xorg display server"
@@ -352,12 +352,12 @@
               - noto-fonts
  
  
- - name: "Programs"
-   description: "Common programs"
-   hidden: false
-   critical: true
+- name: "Programs"
+  description: "Common programs"
+  hidden: false
+  critical: true
  
-   subgroups:
+  subgroups:
  
        - name: "manjaro-hello"
          description: "Manjaro welcome screen for new Manjaro users"
