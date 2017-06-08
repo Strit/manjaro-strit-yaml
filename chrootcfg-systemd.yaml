@@ -1,5 +1,5 @@
-- name: "manjaro"
-  description: "base system"
+- name: "Manjaro"
+  description: "Base system"
   hidden: false
   critical: true
  
@@ -64,7 +64,7 @@
               - mhwd                                      # manjaro-specific
               - sudo                                      # essential package from 'base-devel' group
  
-       - name: "kernel"
+       - name: "Kernel"
          description: "Kernel"
          hidden: true
          selected: true
@@ -96,15 +96,7 @@
               - cpupower
               - manjaro-release
               - manjaro-hotfixes
- 
-       - name: "Network"
-         description: "Minimal network functionality"
-         hidden: false
-         selected: true
-         critical: true
-         packages:
-              - networkmanager
- 
+  
        - name: "Network extra"
          description: "Packages, which extend the network functionality"
          hidden: false
@@ -132,7 +124,7 @@
        - name: "Base-devel"
          description: "AUR support with Yaourt"
          hidden: false
-         selected: true
+         selected: false
          critical: true
          packages:                                        # 'base-devel' packages from arch linux (minus duplicate packages) and yaourt
               - autoconf
@@ -153,7 +145,7 @@
        - name: "Firmware"
          description: "Additional firmware support"
          hidden: false
-         selected: false
+         selected: true
          critical: true
          packages:
               - bluez-firmware
@@ -231,15 +223,39 @@
  
        - name: "Themes"
          description: "Themes for plasma"
-         selected: true
+         selected: false
          hidden: false
          critical: true
-         packages:
-               - breath-icon-theme
-               - sddm-ghost-theme
-               - plasma5-themes-ghost
-               - breeze-gtk
-               - gtk-themes-ghost
+         
+         subgroups:
+         
+              - name: "Ghost Theme"
+              description: "The ghost theme is the default theme on Manjaro Strit"
+              selected: true
+              hidden: false
+              critical: true
+              packages:
+                    - breath-icon-theme
+                    - sddm-ghost-theme
+                    - plasma5-themes-ghost
+                    - breeze-gtk
+                    - gtk-themes-ghost
+
+               - name: "Breath Theme"
+               description: "The Breath theme is the default theme on Manjaro KDE"
+               selected: false
+               hidden: false
+               critical: true
+               packages:
+                     - breath-icon-theme
+                     - breath-dark-icon-theme
+                     - sddm-breath-theme
+                     - plasma5-themes-breath
+                     - breeze-gtk
+                     - gtk-theme-breath
+                     - breath-wallpaper
+        
+
  
        - name: 'Plasma Applications'
          description: 'Some Plasma applications'
@@ -282,7 +298,7 @@
               - kwrited
               - milou
               - plasma-desktop
-              - plsma-nm
+              - plasma-nm
               - plasma-pa
               - plasma-workspace
               - powerdevil
@@ -303,21 +319,44 @@
               - mediainfo
               - libdvdcss
               - vorbis-tools
+
+       - name: "Browsers"
+         description: "Choice of internet browsers"
+         selected: false
+         hidden: false
+         critical: true
+         packages:
               - chromium
+              - firefox
+              - qupzilla
  
-       - name: 'Package Manager'
+       - name: "GUI Package Managers"
          description: 'Packages for packagemanagers'
          selected: false
          hidden: false
          critical: true
-         packages: 
-              - octopi
-              - octopi-cachecleaner
-              - octopi-pacmanhelper
-              - octopi-repoeditor
-              - pacmanlogviewer
-              - pamac
-              - pamac-tray-appindicator
+         
+         subgroups:
+         
+              - name: "Octopi"
+                description: "A QT5 package manager"
+                selected: false
+                hidden: false
+                critical: true
+                packages:
+                     - octopi
+                     - octopi-cachecleaner
+                     - octopi-pacmanhelper
+                     - octopi-repoeditor
+                     - pacmanlogviewer
+              - name: "Pamac"
+                description: "A GTK3 package manager with builtin AUR support"
+                selected: true
+                hidden: false
+                critical: true
+                packages:
+                     - pamac
+                     - pamac-tray-appindicator
  
        - name: 'Audio and video'
          description: 'Audio and video specific packages'
@@ -350,6 +389,7 @@
          critical: true
          packages:
               - noto-fonts
+              - cantarell-fonts
  
  
 - name: "Programs"
@@ -359,23 +399,16 @@
  
   subgroups:
  
-       - name: "manjaro-hello"
-         description: "Manjaro welcome screen for new Manjaro users"
+       - name: "New User"
+         description: "Programs a new user could find handy"
          selected: false
          hidden: false
          critical: true
          packages:
              - manjaro-hello
- 
-       - name: "manjaro-documentation"
-         description: "Manjaro user guide"
-         selected: false
-         hidden: false
-         critical: true
-         packages:
              - manjaro-documentation-en
- 
-       - name: 'manjaro-printer'
+
+       - name: 'Printer support'
          description: 'Printing and printer configuration'
          selected: false
          hidden: false
@@ -383,6 +416,7 @@
          packages:
               - manjaro-printer
               - bluez-cups
+              - print-manager
               
        - name: 'Office suite'
          description: 'A selction of Office software'
