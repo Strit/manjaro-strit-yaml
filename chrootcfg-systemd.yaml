@@ -274,8 +274,6 @@
               - filelight
               - okular
               - gwenview
-              - kwave
-              - kid3
  
        - name: 'Plasma Basic'
          description: 'Basic components for plasma desktop'
@@ -318,7 +316,6 @@
               - git
               - mediainfo
               - libdvdcss
-              - vorbis-tools
 
        - name: "Browsers"
          description: "Choice of internet browsers"
@@ -327,7 +324,7 @@
          critical: true
          packages:
               - chromium
-              - firefox
+              - firefox-kde
               - qupzilla
  
        - name: "GUI Package Managers"
@@ -349,6 +346,7 @@
                      - octopi-pacmanhelper
                      - octopi-repoeditor
                      - pacmanlogviewer
+
               - name: "Pamac"
                 description: "A GTK3 package manager with builtin AUR support"
                 selected: true
@@ -364,13 +362,14 @@
          hidden: false
          critical: true
          packages:
-              - pulseaudio
               - pulseaudio-bluetooth
               - pulseaudio-equalizer
               - pulseaudio-jack
-              - pavucontrol-qt
               - manjaro-alsa
+              - vorbis-tools
               - ffmpegthumbs
+              - smplayer
+              - audacious-qt5
         
        - name: 'Manjaro Settings Manager'
          description: 'Offers easy driver, kernel, and language settings'
@@ -436,6 +435,7 @@
          packages:
               - manjaro-strit-keyring
               - wallpaper-strit
+              - manjaro-strit-kde-settings
                
        - name: 'Security'
          description: 'Security and backup oriented software'
@@ -450,3 +450,28 @@
               - clonezilla
               - kleopatra
               - wireshark-qt
+
+       - name: "Extra Software"
+         description: "Lots of different software"
+         selected: false
+         hidden: false
+         critical: true
+         packages:
+              - manjaro-tools-iso
+              - manjaro-tools-pkg
+              - filezilla
+              - conky
+              - youtube-dl
+              - qbittorrent
+              - nextcloud-client
+              - virtualbox
+              - mumble-git
+              - kmail
+              - k3b
+              - kid3
+              - kwave
+              - steam-manjaro
+              - wine-staging
+              - kdenlive
+              - griffith
+              - obs-studio
