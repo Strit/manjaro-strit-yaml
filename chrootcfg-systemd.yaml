@@ -96,6 +96,8 @@
               - cpupower
               - manjaro-release
               - manjaro-hotfixes
+              - snapd
+              - wget
   
        - name: "Network extra"
          description: "Packages, which extend the network functionality"
@@ -275,6 +277,7 @@
               - okular
               - gwenview
               - kio-gdrive
+              - plasma-vault
  
        - name: 'Plasma Basic'
          description: 'Basic components for plasma desktop'
@@ -326,6 +329,7 @@
          packages:
               - chromium
               - firefox-kde
+              - firefox
               - qupzilla
  
        - name: "GUI Package Managers"
@@ -478,6 +482,5 @@
               - kdenlive
               - griffith
               - obs-studio
-              - bluegriffon
               - discord
               - wire-desktop
