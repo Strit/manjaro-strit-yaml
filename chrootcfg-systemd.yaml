@@ -231,31 +231,31 @@
          
          subgroups:
          
-              - name: "Ghost Theme"
-              description: "The ghost theme is the default theme on Manjaro Strit"
-              selected: true
-              hidden: false
-              critical: true
-              packages:
-                    - breath-icon-theme
-                    - sddm-ghost-theme
-                    - plasma5-themes-ghost
-                    - breeze-gtk
-                    - gtk-themes-ghost
+           - name: "Ghost Theme"
+             description: "The ghost theme is the default theme on Manjaro Strit"
+             selected: true
+             hidden: false
+             critical: true
+             packages:
+                   - breath-icon-theme
+                   - sddm-ghost-theme
+                   - plasma5-themes-ghost
+                   - breeze-gtk
+                   - gtk-themes-ghost
 
-               - name: "Breath Theme"
-               description: "The Breath theme is the default theme on Manjaro KDE"
-               selected: false
-               hidden: false
-               critical: true
-               packages:
-                     - breath-icon-theme
-                     - breath-dark-icon-theme
-                     - sddm-breath-theme
-                     - plasma5-themes-breath
-                     - breeze-gtk
-                     - gtk-theme-breath
-                     - breath-wallpaper
+           - name: "Breath Theme"
+             description: "The Breath theme is the default theme on Manjaro KDE"
+             selected: false
+             hidden: false
+             critical: true
+             packages:
+                   - breath-icon-theme
+                   - breath-dark-icon-theme
+                   - sddm-breath-theme
+                   - plasma5-themes-breath
+                   - breeze-gtk
+                   - gtk-theme-breath
+                   - breath-wallpaper
         
 
  
