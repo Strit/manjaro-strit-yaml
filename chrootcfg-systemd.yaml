@@ -326,11 +326,40 @@
          selected: false
          hidden: false
          critical: true
-         packages:
-              - chromium
-              - firefox-kde
-              - firefox
-              - qupzilla
+         
+         subgroups:
+         
+              - name: "Chromium"
+                description: 'Open Source version of Chrome, based on gtk2'
+                selected: false
+                hidden: false
+                critical: false
+                packages:
+                     - chromium
+                     
+              - name: "Firefox-KDE"
+                description: 'Open Source browser based on gtk2 and gtk3. KDE filedialogs.'
+                selected: false
+                hidden: false
+                critical: false
+                packages:
+                    - firefox-kde
+                    
+              - name: "Firefox"
+                description: 'Open Source browser based on gtk2 and gtk3.'
+                selected: false
+                hidden: false
+                critical: false
+                packages:
+                     - firefox
+                     
+              - name: "Qupzilla"
+                description: 'Open Source browser based on QT5'
+                selected: false
+                hidden: false
+                critical: false
+                packages:
+                     - qupzilla
  
        - name: "GUI Package Managers"
          description: 'Packages for packagemanagers'
@@ -366,17 +395,46 @@
          selected: false
          hidden: false
          critical: true
-         packages:
-              - pulseaudio-bluetooth
-              - pulseaudio-equalizer
-              - pulseaudio-jack
-              - manjaro-alsa
-              - vorbis-tools
-              - ffmpegthumbs
-              - smplayer
-              - audacious-qt5
-              - audacious-plugins-qt5
-              - vlc-nightly
+         
+         subgroups:
+         
+              - name: "Audio and video codecs"
+                description: 'Codecs like ogg and all the extra pulseaudio stuff'
+                selected: false
+                hidden: false
+                critical: false
+                packages:
+                     - pulseaudio-bluetooth
+                     - pulseaudio-equalizer
+                     - pulseaudio-jack
+                     - manjaro-alsa
+                     - vorbis-tools
+                     - ffmpegthumbs
+              
+              - name: "SMPlayer"
+                description: 'Open Source video player based on qt5'
+                selected: false
+                hidden: false
+                critical: false
+                packages:
+                     - smplayer
+                     
+              - name: "Audacious"
+                description: 'Open Source audioplayer based on qt5'
+                selected: false
+                hidden: false
+                critical: false
+                packages:
+                     - audacious-qt5
+                     - audacious-plugins-qt5
+                     
+              - name: "VLC"
+                description: 'Famous Open Source media player based on qt5'
+                selected: false
+                hidden: false
+                critical: false
+                packages:
+                     - vlc-nightly
         
        - name: 'Manjaro Settings Manager'
          description: 'Offers easy driver, kernel, and language settings'
@@ -429,10 +487,31 @@
          selected: false
          hidden: false
          critical: false
-         packages:
-              - calligra
-              - libreoffice-fresh
-              - libreoffice-still
+
+             supgroups:
+                  - name: "Calligra"
+                    description: 'KDE Plasma Office Suite'
+                    selected: false
+                    hidden: false
+                    critical: false
+                    packages:
+                         - calligra
+                         
+                  - name: "LibreOffice Fresh"
+                    description: 'The newest version of LibeOffice'
+                    selected: false
+                    hidden: false
+                    critical: false
+                    packages:
+                         - libreoffice-fresh
+                         
+                  - name: "LibreOffice Still"
+                    description: 'Very stable version of LibreOffice'
+                    selected: false
+                    hidden: false
+                    critical: false
+                    packages:
+                         - libreoffice-still
               
        - name: 'Manjaro Strit'
          description: 'Manjaro Strit specific packages not in Manjaro repositories'
